@@ -2,7 +2,8 @@
 
 Project page for **bioMoR: Biology-Guided Mixture-of-Recursions for Effective Genomic Learning**.
 
-> **Status:** manuscript under review — not yet accepted or published.
+> **Status:** preprint at [arXiv:2608.06727](https://arxiv.org/abs/2608.06727) (v1, 7 Aug 2026);
+> manuscript under review — not yet accepted or published.
 
 Static site built on the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template)
 (adopted from [Nerfies](https://nerfies.github.io)), matching the styling of the
@@ -46,9 +47,12 @@ pdftoppm -r 600 -png -singlefile /path/to/figs/<name>.pdf static/images/<name>
 python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-## TODO before the page goes public
+## TODO
 
-- [ ] Replace the `arXiv (soon)` button's `href="#"` with the arXiv abs URL.
-- [ ] Point the `Code` button at the actual code repository (currently the org page).
-- [ ] Update the BibTeX from `@unpublished{howlader2026biomor, ...}` to the published reference once
-      the paper is accepted, and swap the `Under Review` tag for the venue.
+- [x] Replace the `arXiv (soon)` button's `href="#"` with the arXiv abs URL — now
+      [arXiv:2608.06727](https://arxiv.org/abs/2608.06727). `static/paper/paper.pdf` is the
+      PDF arXiv serves for v1.
+- [ ] Point the `Code` button at the actual code repository — no code repo exists yet, so the
+      button reads `Code (soon)` with `href="#"`.
+- [ ] Update the BibTeX from the `@misc{howlader2026biomor, ...}` arXiv preprint entry to the
+      published reference once the paper is accepted, and swap the `Under Review` tag for the venue.
