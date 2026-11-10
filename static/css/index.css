@@ -229,3 +229,27 @@ body {
 .funding-note .icon { color: #c8102e; margin-right: 0.4rem; }
 .funding-note { max-width: 760px; }
 .funding-nsf { margin-top: 0.6rem; font-size: 0.9rem; color: #555; text-align: left; }
+
+/* Embedded autoplay video + symposium label */
+.video-event { margin-bottom: 0.9rem; font-size: 1.05rem; color: #444; }
+.video-event-tag {
+  display: inline-block; margin-right: 0.5rem; padding: 0.25rem 0.8rem;
+  border-radius: 999px; background: #c8102e; color: #fff;
+  font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.video-frame {
+  position: relative; max-width: 760px; margin: 0 auto; aspect-ratio: 16 / 9;
+  border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); background: #000;
+}
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-cta { margin-top: 1.1rem; font-weight: 600; }
+.video-cta, .video-cta span { color: #fff !important; }
+.video-frame #biomor-player, .video-frame > iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-unmute {
+  position: absolute; left: 50%; bottom: 18%; z-index: 2; transform: translateX(-50%);
+  padding: 0.7rem 1.4rem; border: 0; border-radius: 999px; cursor: pointer;
+  background: rgba(255, 0, 0, 0.92); color: #fff; font-size: 1.05rem; font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); animation: video-pulse 2.2s infinite;
+}
+.video-unmute[hidden] { display: none; }
+.video-unmute:hover { background: #cc0000; }
