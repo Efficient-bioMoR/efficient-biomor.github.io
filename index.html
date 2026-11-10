@@ -138,13 +138,46 @@
 <!-- Video spotlight -->
 <section class="section video-spotlight">
   <div class="container is-max-desktop has-text-centered">
-    <a class="video-card" href="https://youtu.be/lWX0FQSI6sg" target="_blank" rel="noopener"
-       aria-label="Watch the bioMoR video on YouTube">
-      <img src="https://i.ytimg.com/vi/lWX0FQSI6sg/maxresdefault.jpg"
-           onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/lWX0FQSI6sg/hqdefault.jpg';"
-           alt="bioMoR video thumbnail" loading="lazy">
-      <span class="video-play"><i class="fas fa-play"></i></span>
-      <span class="video-caption"><i class="fab fa-youtube"></i>&nbsp; Watch the bioMoR video</span>
+    <p class="video-event">
+      <span class="video-event-tag"><i class="fas fa-microphone-alt"></i>&nbsp; AI Student Symposium</span>
+      Presented by NSF D4 NRT Fellows
+    </p>
+    <div class="video-frame">
+      <div id="biomor-player"></div>
+      <button id="video-unmute" class="video-unmute" type="button" hidden>
+        <i class="fas fa-volume-up"></i>&nbsp; Tap for sound
+      </button>
+    </div>
+    <script>
+      // Try to autoplay with sound; browsers that block it get muted autoplay plus an unmute button.
+      var biomorPlayer;
+      function onYouTubeIframeAPIReady() {
+        biomorPlayer = new YT.Player('biomor-player', {
+          videoId: 'lWX0FQSI6sg',
+          host: 'https://www.youtube-nocookie.com',
+          playerVars: { autoplay: 1, rel: 0, playsinline: 1, loop: 1, playlist: 'lWX0FQSI6sg' },
+          events: {
+            onReady: function (e) {
+              e.target.unMute(); e.target.setVolume(100); e.target.playVideo();
+              setTimeout(function () {
+                if (e.target.getPlayerState() !== YT.PlayerState.PLAYING) {
+                  e.target.mute(); e.target.playVideo();
+                  document.getElementById('video-unmute').hidden = false;
+                }
+              }, 1200);
+            }
+          }
+        });
+      }
+      document.getElementById('video-unmute').addEventListener('click', function () {
+        biomorPlayer.unMute(); biomorPlayer.setVolume(100); biomorPlayer.playVideo();
+        this.hidden = true;
+      });
+    </script>
+    <script src="https://www.youtube.com/iframe_api" async></script>
+    <a class="button is-rounded video-button video-cta" href="https://youtu.be/lWX0FQSI6sg" target="_blank" rel="noopener">
+      <span class="icon"><i class="fab fa-youtube"></i></span>
+      <span>Watch on YouTube</span>
     </a>
   </div>
 </section>
