@@ -227,3 +227,5 @@ body {
   font-size: 1.1rem;
 }
 .funding-note .icon { color: #c8102e; margin-right: 0.4rem; }
+.funding-note { max-width: 760px; }
+.funding-nsf { margin-top: 0.6rem; font-size: 0.9rem; color: #555; text-align: left; }
